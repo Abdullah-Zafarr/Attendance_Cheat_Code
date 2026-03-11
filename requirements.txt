@@ -1,0 +1,7 @@
+vosk
+faster-whisper
+soundcard
+rapidfuzz
+pygame-ce
+numpy
+PyAudioWPatch
