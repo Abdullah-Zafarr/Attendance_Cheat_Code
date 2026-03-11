@@ -4,6 +4,9 @@ A lightweight desktop app that listens to your system audio during online classe
 
 **No APIs required** — it captures the audio coming out of your speakers/headphones directly.
 
+![Attendance Alarm UI](assets/user%20interface.PNG)
+
+
 ---
 
 ## Features
@@ -146,9 +149,10 @@ Attendance_Cheat_Code/
 |---|---|
 | `vosk` | Offline speech recognition (engine 1) |
 | `faster-whisper` | Offline Whisper STT (engine 2) |
-| `soundcard` | Cross-platform audio loopback capture |
+| `PyAudioWPatch` | Reliable WASAPI loopback capture (Windows) |
+| `soundcard` | Cross-platform audio loopback capture (Linux) |
 | `rapidfuzz` | Fuzzy string matching |
-| `pygame` | Alarm sound playback |
+| `pygame-ce` | Alarm sound playback |
 | `numpy` | Audio data processing |
 
 ---
