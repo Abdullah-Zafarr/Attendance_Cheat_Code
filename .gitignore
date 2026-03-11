@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+venv/
+.env
+vosk-model-small-en-us-0.15/
+alarm.wav
+test_audio.py
