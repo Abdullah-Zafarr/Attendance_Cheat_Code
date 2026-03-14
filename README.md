@@ -2,7 +2,7 @@
 
 I couldn't understand a single word from my online classes but attendance still mattered. So instead of zoning out on a Zoom/Meet call for an hour pretending to pay attention, I built something that watches the call for me.
 
-It captures your system audio in real-time, runs speech recognition on it, and the moment someone says your name — it goes off like a fire alarm. No APIs, no cloud, no internet needed. Everything runs offline on your machine.
+It captures your system audio in real-time, runs speech recognition on it, and the moment someone says your name, it goes off like a fire alarm. No APIs, no cloud, no internet needed. Everything runs offline on your machine.
 
 Now I spend my lectures actually building stuff (like this) while my attendance stays clean.
 
@@ -10,7 +10,7 @@ Now I spend my lectures actually building stuff (like this) while my attendance 
 
 ### Why does this exist?
 
-> Let's be real — online classes are 60 minutes of buffering audio and one professor-mumble away from a nap. But attendance? That still counts. I realized I was wasting hours "attending" classes where the ROI on paying attention was basically zero. So I built this to make sure I never miss the only 2 seconds of the lecture that actually matter: the roll call. Use your brain for things that have an actual return — let this handle the rest.
+> Let's be real, online classes are 60 minutes of buffering audio and one professor-mumble away from a nap. But attendance? That still counts. I realized I was wasting hours "attending" classes where the ROI on paying attention was basically zero. So I built this to make sure I never miss the only 2 seconds of the lecture that actually matter: the roll call. Use your brain for things that have an actual return. let this handle the rest.
 
 ---
 
