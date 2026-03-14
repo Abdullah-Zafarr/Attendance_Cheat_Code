@@ -4,7 +4,7 @@ A lightweight desktop app that listens to your system audio during online classe
 
 **No APIs required** — it captures the audio coming out of your speakers/headphones directly.
 
-![Attendance Alarm UI](assets/user%20interface.PNG)
+![Attendance Alarm UI](assets/test%20case%20and%20ui.PNG)
 
 
 ---
