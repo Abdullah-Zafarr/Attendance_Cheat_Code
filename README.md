@@ -1,43 +1,50 @@
-# 🔔 Attendance Alarm
+# 🔔 Attendance Cheat Code
 
-A lightweight desktop app that listens to your system audio during online classes (Google Meet, Zoom, etc.) and triggers a loud alarm when your name is spoken.
+I couldn't understand a single word from my online classes but attendance still mattered. So instead of rotting on a Zoom/Meet call for an hour pretending to pay attention, I built something that watches the call for me.
 
-**No APIs required** — it captures the audio coming out of your speakers/headphones directly.
+It captures your system audio in real-time, runs speech recognition on it, and the moment someone says your name — it goes off like a fire alarm. No APIs, no cloud, no internet needed. Everything runs offline on your machine.
+
+Now I spend my lectures actually building stuff (like this) while my attendance stays clean.
 
 ![Attendance Alarm UI](assets/test%20case%20and%20ui.PNG)
 
+### Why does this exist?
+
+> Let's be real — online classes are 60 minutes of buffering audio and one professor-mumble away from a nap. But attendance? That still counts. I realized I was wasting hours "attending" classes where the ROI on paying attention was basically zero. So I built this to make sure I never miss the only 2 seconds of the lecture that actually matter: the roll call. Use your brain for things that have an actual return — let this handle the rest.
 
 ---
 
-## Features
+## What it does
 
-- 🎙 **System audio capture** — listens to whatever plays on your computer
+- 🎙 **Captures system audio** — listens to whatever is playing through your speakers/headphones
 - 🗣 **Real-time speech recognition** — choose between **Vosk** (fast & light) or **Whisper** (more accurate)
-- 🔍 **Fuzzy name matching** — handles transcription typos automatically
-- 🔔 **Loud alarm** with 20-second cooldown to prevent spam
-- 🖥 **Clean dark GUI** with Start/Stop, engine selector, name list, and detection log
-- 🐧🪟 **Cross-platform** — works on Windows and Linux
+- 🔍 **Fuzzy name matching** — handles misspellings and transcription errors automatically
+- 🔔 **Loud alarm** with a 20-second cooldown so it doesn't spam you
+- 🖥 **Clean dark GUI** — start/stop, engine selector, name list, and detection log
+- 🐧🪟 **Cross-platform** — Windows and Linux
 
 ---
 
-## Prerequisites
+## Before you start
 
 - **Python 3.10+**
-- **Windows**: No extra setup needed (uses WASAPI loopback)
-- **Linux**: PulseAudio or PipeWire-PulseAudio must be running
+- **Windows**: You're good to go, it uses WASAPI loopback out of the box
+- **Linux**: Make sure PulseAudio or PipeWire-PulseAudio is running
 
 ---
 
-## Installation
+## Setup
 
-### 1. Clone / Download
+Pretty straightforward:
+
+### 1. Grab the repo
 
 ```bash
 git clone <repo-url>
 cd Attendance_Cheat_Code
 ```
 
-### 2. Create a virtual environment (recommended)
+### 2. Virtual environment (recommended)
 
 ```bash
 python -m venv venv
@@ -49,7 +56,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+### 3. Install everything
 
 ```bash
 pip install -r requirements.txt
@@ -61,39 +68,39 @@ pip install -r requirements.txt
 python generate_alarm.py
 ```
 
-This creates `alarm.wav` in the project folder (run once).
+Creates `alarm.wav` in the project folder. Only need to run it once.
 
-### 5. Vosk model (auto-downloaded)
+### 5. Vosk model
 
-The first time you use the **Vosk** engine, the small English model (~40 MB) is downloaded automatically. No manual setup needed.
+First time you pick the Vosk engine, it auto-downloads the small English model (~40 MB). No manual setup needed.
 
 ---
 
-## Usage
+## How to use it
 
 ```bash
 python main.py
 ```
 
-1. **Select engine** — pick *Vosk* (faster, lighter) or *Whisper* (more accurate)
-2. **Edit names** — type one name per line in the text box
-3. **Click Start** — the app begins listening to your system audio
-4. **Attend your class** — when any listed name is detected, the alarm sounds
-5. **Click Stop** — to pause listening
+1. **Pick your engine** — Vosk for speed, Whisper for accuracy
+2. **Type in your names** — one per line, add common misspellings too
+3. **Hit Start** — it starts listening to your system audio
+4. **Go do something useful** — when your name gets detected, the alarm handles the rest
+5. **Hit Stop** — when class is over
 
-### Example names list
+### Tip: add name variations
+
+Profs and transcription engines butcher names differently, so add a few spellings:
 
 ```
 abdullah
 abdulla
 abdula
-ali
-ahmed
 ```
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 Attendance_Cheat_Code/
@@ -106,51 +113,53 @@ Attendance_Cheat_Code/
 ├── generate_alarm.py       # Alarm WAV generator
 ├── alarm.wav               # Generated alarm sound
 ├── requirements.txt        # Dependencies
-└── README.md               # This file
+└── README.md
 ```
 
 ---
 
-## Engine Comparison
+## Vosk vs Whisper
 
-| Feature | Vosk | Whisper |
+| | Vosk | Whisper |
 |---|---|---|
-| Speed | ⚡ Very fast | 🐢 Moderate |
+| Speed | ⚡ Very fast | 🐢 Slower |
 | Accuracy | Good | Better |
 | CPU usage | Low | Higher |
-| Latency | ~0.5 s | ~3 s |
-| Best for | Lightweight / older PCs | Maximum accuracy |
+| Latency | ~0.5s | ~3s |
+| Best for | Lightweight / older PCs | Max accuracy |
+
+Vosk works great for most cases. Whisper is there if you need that extra accuracy.
 
 ---
 
-## Troubleshooting
+## Something not working?
 
 ### "No audio captured"
-- Make sure audio is playing through your **default speaker/headphones**
-- On Linux, ensure **PulseAudio** is running: `pulseaudio --check`
+- Make sure audio is actually playing through your **default speakers/headphones**
+- Linux: check if PulseAudio is alive → `pulseaudio --check`
 
-### Vosk model download fails
-- Download manually from https://alphacephei.com/vosk/models
+### Vosk model won't download
+- Grab it manually from https://alphacephei.com/vosk/models
 - Extract `vosk-model-small-en-us-0.15` into the project folder
 
-### False positives
-- Use longer/more specific names rather than very short ones
-- Increase the fuzzy match threshold in `detector.py` (default: 80)
+### Too many false alarms
+- Use longer / more specific names instead of short ones
+- Bump up the fuzzy match threshold in `detector.py` (default is 80)
 
 ### Linux audio issues
 - Install PulseAudio: `sudo apt install pulseaudio`
-- If using PipeWire: `sudo apt install pipewire-pulse`
+- On PipeWire: `sudo apt install pipewire-pulse`
 
 ---
 
 ## Dependencies
 
-| Package | Purpose |
+| Package | What it does |
 |---|---|
 | `vosk` | Offline speech recognition (engine 1) |
 | `faster-whisper` | Offline Whisper STT (engine 2) |
-| `PyAudioWPatch` | Reliable WASAPI loopback capture (Windows) |
-| `soundcard` | Cross-platform audio loopback capture (Linux) |
+| `PyAudioWPatch` | WASAPI loopback capture on Windows |
+| `soundcard` | Audio loopback on Linux |
 | `rapidfuzz` | Fuzzy string matching |
 | `pygame-ce` | Alarm sound playback |
 | `numpy` | Audio data processing |
@@ -159,4 +168,4 @@ Attendance_Cheat_Code/
 
 ## License
 
-MIT — use freely.
+MIT — do whatever you want with it.
