@@ -1,6 +1,6 @@
 # 🔔 Attendance Cheat Code
 
-I couldn't understand a single word from my online classes but attendance still mattered. So instead of rotting on a Zoom/Meet call for an hour pretending to pay attention, I built something that watches the call for me.
+I couldn't understand a single word from my online classes but attendance still mattered. So instead of zoning out on a Zoom/Meet call for an hour pretending to pay attention, I built something that watches the call for me.
 
 It captures your system audio in real-time, runs speech recognition on it, and the moment someone says your name — it goes off like a fire alarm. No APIs, no cloud, no internet needed. Everything runs offline on your machine.
 
