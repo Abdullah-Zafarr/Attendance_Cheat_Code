@@ -1,8 +1,8 @@
 # 🔔 Attendance Alarm
 
-Stop wasting your life staring at boring online classes. This lightweight app listens to your system audio and triggers a loud alarm only when your name is actually spoken. Know exactly when you're needed so you can spend your time on things that actually matter.
+A lightweight desktop app that listens to your system audio during online classes (Google Meet, Zoom, etc.) and triggers a loud alarm when your name is spoken.
 
-**No APIs, no nonsense** — it captures audio directly from your speakers.
+**No APIs required** — it captures the audio coming out of your speakers/headphones directly.
 
 ![Attendance Alarm UI](assets/test%20case%20and%20ui.PNG)
 
