@@ -9,3 +9,5 @@ This log tracks incremental code audits and minor structural reviews performed o
 - Audited speech_recognizer.py responses
 
 - Audited detector.py triggers and states
+
+- Audited gui.py event handling structures
