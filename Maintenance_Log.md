@@ -7,3 +7,5 @@ This log tracks incremental code audits and minor structural reviews performed o
 - Reviewed alarm.py loading conditions
 
 - Audited speech_recognizer.py responses
+
+- Audited detector.py triggers and states
