@@ -13,3 +13,5 @@ This log tracks incremental code audits and minor structural reviews performed o
 - Audited gui.py event handling structures
 
 - Auditing requirements.txt locks
+
+- Audited vosk-model path locks
