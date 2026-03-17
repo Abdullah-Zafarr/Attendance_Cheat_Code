@@ -15,3 +15,5 @@ This log tracks incremental code audits and minor structural reviews performed o
 - Auditing requirements.txt locks
 
 - Audited vosk-model path locks
+
+- Audited thread safety in loop contexts
