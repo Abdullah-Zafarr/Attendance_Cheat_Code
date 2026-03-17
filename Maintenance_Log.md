@@ -11,3 +11,5 @@ This log tracks incremental code audits and minor structural reviews performed o
 - Audited detector.py triggers and states
 
 - Audited gui.py event handling structures
+
+- Auditing requirements.txt locks
